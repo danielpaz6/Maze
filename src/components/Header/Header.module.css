@@ -1,0 +1,9 @@
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.score {
+    color: yellow;
+    white-space: pre;
+}
