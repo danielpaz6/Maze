@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/Maze/static/css/main.1856df13.chunk.css",
+    "main.js": "/Maze/static/js/main.0bfc5651.chunk.js",
+    "main.js.map": "/Maze/static/js/main.0bfc5651.chunk.js.map",
+    "runtime-main.js": "/Maze/static/js/runtime-main.733a612d.js",
+    "runtime-main.js.map": "/Maze/static/js/runtime-main.733a612d.js.map",
+    "static/js/2.ddcc9dfb.chunk.js": "/Maze/static/js/2.ddcc9dfb.chunk.js",
+    "static/js/2.ddcc9dfb.chunk.js.map": "/Maze/static/js/2.ddcc9dfb.chunk.js.map",
+    "index.html": "/Maze/index.html",
+    "precache-manifest.1d8e5346e0619ed59cd2085cfe33b807.js": "/Maze/precache-manifest.1d8e5346e0619ed59cd2085cfe33b807.js",
+    "service-worker.js": "/Maze/service-worker.js",
+    "static/css/main.1856df13.chunk.css.map": "/Maze/static/css/main.1856df13.chunk.css.map",
+    "static/js/2.ddcc9dfb.chunk.js.LICENSE.txt": "/Maze/static/js/2.ddcc9dfb.chunk.js.LICENSE.txt",
+    "static/media/ice_cream.svg": "/Maze/static/media/ice_cream.c760f5dc.svg",
+    "static/media/index.css": "/Maze/static/media/joystix monospace.18abc722.ttf",
+    "static/media/level_end.mp3": "/Maze/static/media/level_end.3931d957.mp3",
+    "static/media/logo.svg": "/Maze/static/media/logo.f342226d.svg",
+    "static/media/lollipop.svg": "/Maze/static/media/lollipop.5bf858ee.svg",
+    "static/media/maze.mp3": "/Maze/static/media/maze.12c141ff.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.733a612d.js",
+    "static/js/2.ddcc9dfb.chunk.js",
+    "static/css/main.1856df13.chunk.css",
+    "static/js/main.0bfc5651.chunk.js"
+  ]
+}
