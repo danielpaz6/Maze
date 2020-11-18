@@ -13,7 +13,7 @@ Clone and install dependecies:
 
 ```
 git clone https://github.com/danielpaz6/Maze.git
-cd react-covid-19-app
+cd Maze
 yarn install
 yarn start
 ```
