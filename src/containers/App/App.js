@@ -180,7 +180,7 @@ function App() {
       mazeAudio.pause();
       mazeAudio.currentTime = 0;
       dispatch({ type: 'endGame' });
-    } else if (ROUND_TIME - state.time === 2) {
+    } else if (ROUND_TIME - state.time === 30) {
       dispatch({
         type: 'addPrize',
         payload: { index: 0 }, // Lolippop
