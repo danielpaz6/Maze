@@ -14,24 +14,16 @@ function Board({ maze, currentCell, prizes }) {
 
   
   const onResize = () => {
-    console.log('here!');
-    // const fitToContainer = (event) => {
     const { offsetWidth, offsetHeight } = container.current;
-    // canvas.current.width = canvas.current.clientWidth;
-    // canvas.current.height = canvas.current.clientHeight;
     canvas.current.width = offsetWidth;
     canvas.current.height = offsetHeight;
-    // setTimeout(fitToContainer, 0, event);
   };
 
   useEffect(() => {
     setCtx(canvas.current.getContext('2d'));
+    onResize();
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
-
-    // const observer = new ResizeObserver(onResize);
-    // observer.observe(canvas.current);
-    // return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
