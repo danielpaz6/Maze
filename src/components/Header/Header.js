@@ -15,11 +15,16 @@ function Header({ hiScore, time, points, round }) {
           Hi-Score <span className={styles.score}>{hiScore.toString().padStart(5, ' ')}</span>
         </p>
       </div>
-      <p>
-        1UP <span className={styles.score}>{points.toString().padStart(5, ' ')}</span>&nbsp;&nbsp;
-        ROUND <span className={styles.score}>{round.toString().padStart(3, ' ')}</span>&nbsp;&nbsp;
-        TIME <span className={styles.score}>{formatTime()}</span>
-      </p>
+      <div className={styles.stats}>
+        <p>
+          1UP <span className={styles.score}>{points.toString().padStart(5, ' ')}</span>&nbsp;&nbsp;
+          ROUND <span className={styles.score}>{round.toString().padStart(3, ' ')}</span>&nbsp;&nbsp;
+          TIME <span className={styles.score}>{formatTime()}</span>&nbsp;&nbsp;
+        </p>
+        <p className={styles.responsiveScore}>
+          Hi-Score <span className={styles.score}>{hiScore.toString().padStart(5, ' ')}</span>
+        </p>
+      </div>
     </header>
   );
 }

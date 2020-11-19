@@ -1,7 +1,13 @@
 .root {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding: 8px;
-    position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  position: relative;
+}
+
+.container {
+  flex: 1;
+  margin: 40px;
+  position: relative;
 }

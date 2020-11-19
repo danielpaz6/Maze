@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styles from './Board.module.css';
 import PropTypes from 'prop-types';
 import useInterval from '@use-it/interval';
@@ -6,25 +6,23 @@ import logoImage from '../../assets/images/logo.svg';
 
 // import lollipopImage from '../../assets/images/lollipop.svg';
 
-function Board({ maze, currentCell, prizes }) {
+function Board({ maze, currentCell, prizes, forwardedRef }) {
   const canvas = useRef(null);
-  const container = useRef(null);
   const [ctx, setCtx] = useState(undefined);
   const [displayGoal, setDisplayGoal] = useState(true);
 
-  
-  const onResize = () => {
-    const { offsetWidth, offsetHeight } = container.current;
+  const onResize = useCallback(() => {
+    const { offsetWidth, offsetHeight } = forwardedRef.current;
     canvas.current.width = offsetWidth;
     canvas.current.height = offsetHeight;
-  };
+  }, [forwardedRef]);
 
   useEffect(() => {
     setCtx(canvas.current.getContext('2d'));
     onResize();
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
-  }, []);
+  }, [onResize]);
 
   useEffect(() => {
     let didCancel = false;
@@ -128,10 +126,8 @@ function Board({ maze, currentCell, prizes }) {
   }, 1000);
 
   return (
-    <div className={styles.root} ref={container}>
-      <div style={{ position: 'absolute' }}>
-        <canvas className={styles.canvas} ref={canvas} />
-      </div>
+    <div className={styles.root}>
+      <canvas className={styles.canvas} ref={canvas} />
     </div>
   );
 }
@@ -142,6 +138,7 @@ Board.propTypes = {
     rows: PropTypes.number.isRequired,
     cells: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.bool)).isRequired,
     currentCell: PropTypes.arrayOf(PropTypes.number),
+    forwardedRef: PropTypes.object,
   }),
 };
 

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useReducer } from 'react';
+import React, { useCallback, useEffect, useReducer, useRef } from 'react';
 import styles from './App.module.css';
 import useInterval from '@use-it/interval';
 import Header from '../../components/Header/Header';
@@ -17,6 +17,7 @@ import { useKey } from '../../hooks/useKey';
 import mazeAudioFile from '../../assets/audio/maze.mp3';
 import mazeLevelEndAudioFile from '../../assets/audio/level_end.mp3';
 import { arraysEqual } from '../../utils/arrayUtils';
+import Joystick from '../Joystick/Joystick';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -122,6 +123,8 @@ function App() {
     prizes: [],
   });
 
+  const container = useRef(null);
+
   const isGameOver = !state.time;
 
   const handleOnEnterKeyPressed = useCallback(() => {
@@ -224,11 +227,15 @@ function App() {
   return (
     <div className={styles.root}>
       <Header hiScore={state.hiScore} points={state.points} time={state.time} round={state.round} />
-      <Board
-        maze={state.maze}
-        currentCell={state.currentCell}
-        prizes={state.prizes}
-      />
+      <div className={styles.container} ref={container}>
+        <Board
+          maze={state.maze}
+          currentCell={state.currentCell}
+          prizes={state.prizes}
+          forwardedRef={container}
+        />
+        <Joystick handleOnArrowKeyPressed={handleOnArrowKeyPressed} />
+      </div>
       <Notification show={!state.time} gameOver={state.time === 0} />
     </div>
   );
