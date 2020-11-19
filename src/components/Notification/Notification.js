@@ -2,12 +2,14 @@ import React from 'react';
 import styles from './Notification.module.css';
 import PropTypes from 'prop-types';
 
-function Notification({ show, gameOver }) {
+function Notification({ show, gameOver, handleOnStartGame }) {
   return (
     show && (
       <div className={styles.root}>
         {gameOver ? <p>GAME OVER</p> : null}
-        PRESS <kbd>Enter</kbd> TO START
+        <span onClick={handleOnStartGame}>
+          PRESS <kbd>Enter</kbd> OR HERE TO START
+        </span>
       </div>
     )
   );
@@ -16,6 +18,7 @@ function Notification({ show, gameOver }) {
 Notification.propTypes = {
   show: PropTypes.bool.isRequired,
   gameOver: PropTypes.bool.isRequired,
+  handleOnStartGame: PropTypes.func,
 };
 
 export default Notification;

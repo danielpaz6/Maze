@@ -17,7 +17,7 @@ import { useKey } from '../../hooks/useKey';
 import mazeAudioFile from '../../assets/audio/maze.mp3';
 import mazeLevelEndAudioFile from '../../assets/audio/level_end.mp3';
 import { arraysEqual } from '../../utils/arrayUtils';
-import Joystick from '../Joystick/Joystick';
+import Joystick from '../../components/Joystick/Joystick';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -127,7 +127,7 @@ function App() {
 
   const isGameOver = !state.time;
 
-  const handleOnEnterKeyPressed = useCallback(() => {
+  const handleOnStartGame = useCallback(() => {
     if (!state.time) {
       dispatch({
         type: 'startGame',
@@ -168,7 +168,7 @@ function App() {
     [state.currentCell, state.maze, isGameOver, state.isGoalReached, state.prizes]
   );
 
-  useKey([KEYBOARD.Enter], handleOnEnterKeyPressed);
+  useKey([KEYBOARD.Enter], handleOnStartGame);
   useKey([KEYBOARD.Left, KEYBOARD.Right, KEYBOARD.Up, KEYBOARD.Down], handleOnArrowKeyPressed);
 
   useInterval(
@@ -236,7 +236,11 @@ function App() {
         />
         <Joystick handleOnArrowKeyPressed={handleOnArrowKeyPressed} />
       </div>
-      <Notification show={!state.time} gameOver={state.time === 0} />
+      <Notification
+        show={!state.time}
+        gameOver={state.time === 0}
+        handleOnStartGame={handleOnStartGame}
+      />
     </div>
   );
 }
