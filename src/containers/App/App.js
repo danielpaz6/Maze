@@ -105,7 +105,7 @@ function reducer(state, action) {
 
 const mazeAudio = new Audio(mazeAudioFile);
 mazeAudio.loop = true;
-mazeAudio.volume = 0.3;
+// mazeAudio.volume = 0.3;
 
 const levelEndAudio = new Audio(mazeLevelEndAudioFile);
 

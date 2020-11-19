@@ -12,24 +12,26 @@ function Board({ maze, currentCell, prizes }) {
   const [ctx, setCtx] = useState(undefined);
   const [displayGoal, setDisplayGoal] = useState(true);
 
+  
   const onResize = () => {
-    const fitToContainer = () => {
-      const { offsetWidth, offsetHeight } = container.current;
-      canvas.current.width = offsetWidth;
-      canvas.current.height = offsetHeight;
-      canvas.current.style.width = offsetWidth + 'px';
-      canvas.current.style.height = offsetHeight + 'px';
-    };
-
-    setTimeout(fitToContainer, 0);
-    setCtx(canvas.current.getContext('2d'));
+    console.log('here!');
+    // const fitToContainer = (event) => {
+    const { offsetWidth, offsetHeight } = container.current;
+    // canvas.current.width = canvas.current.clientWidth;
+    // canvas.current.height = canvas.current.clientHeight;
+    canvas.current.width = offsetWidth;
+    canvas.current.height = offsetHeight;
+    // setTimeout(fitToContainer, 0, event);
   };
 
   useEffect(() => {
-    onResize();
+    setCtx(canvas.current.getContext('2d'));
     window.addEventListener('resize', onResize);
-
     return () => window.removeEventListener('resize', onResize);
+
+    // const observer = new ResizeObserver(onResize);
+    // observer.observe(canvas.current);
+    // return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -135,7 +137,9 @@ function Board({ maze, currentCell, prizes }) {
 
   return (
     <div className={styles.root} ref={container}>
-      <canvas ref={canvas} />
+      <div style={{ position: 'absolute' }}>
+        <canvas className={styles.canvas} ref={canvas} />
+      </div>
     </div>
   );
 }
