@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d0448162b6abc78a48e001156fcfdeba",
+    "revision": "d43badcf344a594f0c6173a48367678d",
     "url": "/Maze/index.html"
   },
   {
-    "revision": "80b3f78fa64935c461d8",
-    "url": "/Maze/static/css/main.1856df13.chunk.css"
+    "revision": "c66cf0306bca22952155",
+    "url": "/Maze/static/css/main.1d9d3a00.chunk.css"
   },
   {
-    "revision": "a382eeb103c7196d80a6",
-    "url": "/Maze/static/js/2.ddcc9dfb.chunk.js"
+    "revision": "2bac6df64836dc98c082",
+    "url": "/Maze/static/js/2.746fbe78.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/Maze/static/js/2.ddcc9dfb.chunk.js.LICENSE.txt"
+    "url": "/Maze/static/js/2.746fbe78.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "80b3f78fa64935c461d8",
-    "url": "/Maze/static/js/main.0bfc5651.chunk.js"
+    "revision": "c66cf0306bca22952155",
+    "url": "/Maze/static/js/main.47d2306d.chunk.js"
   },
   {
     "revision": "cc48569096b1271dc339",
