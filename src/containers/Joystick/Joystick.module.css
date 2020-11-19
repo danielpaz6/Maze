@@ -42,6 +42,10 @@
   align-items: center;
 }
 
+.button:active .arrow {
+  opacity: 0.7;
+}
+
 .left {
   width: 25%;
   height: 50%;
