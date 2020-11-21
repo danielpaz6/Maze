@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useReducer, useRef } from 'react';
+import React, { useCallback, useEffect, useReducer, useRef, useState } from 'react';
 import styles from './App.module.css';
 import useInterval from '@use-it/interval';
 import Header from '../../components/Header/Header';
@@ -123,9 +123,19 @@ function App() {
     prizes: [],
   });
 
+  const [mute, setMute] = useState(false);
   const container = useRef(null);
 
   const isGameOver = !state.time;
+
+  const handleToggleMute = useCallback(() => {
+    if (!mute) {
+      mazeAudio.pause();
+      mazeAudio.currentTime = 0;
+    }
+
+    setMute(oldMute => !oldMute);
+  }, [mute]);
 
   const handleOnStartGame = useCallback(() => {
     if (!state.time) {
@@ -197,10 +207,10 @@ function App() {
   }, [state.time]);
 
   useEffect(() => {
-    if (state.round > 0 && state.time > 0 && !state.isGoalReached) {
+    if (state.round > 0 && state.time > 0 && !state.isGoalReached && !mute) {
       mazeAudio.play();
     }
-  }, [state.round, state.time, state.isGoalReached]);
+  }, [state.round, state.time, state.isGoalReached, mute]);
 
   useEffect(() => {
     const onFinishAudio = () => {
@@ -213,7 +223,7 @@ function App() {
       });
     };
 
-    if (state.isGoalReached) {
+    if (state.isGoalReached && !mute) {
       mazeAudio.pause();
       mazeAudio.currentTime = 0;
 
@@ -222,11 +232,18 @@ function App() {
     }
 
     return () => levelEndAudio.removeEventListener('ended', onFinishAudio);
-  }, [state.isGoalReached]);
+  }, [state.isGoalReached, mute]);
 
   return (
     <div className={styles.root}>
-      <Header hiScore={state.hiScore} points={state.points} time={state.time} round={state.round} />
+      <Header
+        mute={mute}
+        handleToggleMute={handleToggleMute}
+        hiScore={state.hiScore}
+        points={state.points}
+        time={state.time}
+        round={state.round}
+      />
       <div className={styles.container} ref={container}>
         <Board
           maze={state.maze}

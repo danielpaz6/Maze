@@ -19,6 +19,18 @@
   display: none;
 }
 
+.muteButton {
+  background: 0;
+  border: 0;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.muteButton img {
+  width: 24px;
+  height: 24px;
+}
+
 @media only screen and (max-width: 700px) {
   .row {
     display: none;
@@ -30,5 +42,10 @@
 
   .responsiveScore {
     display: block;
+  }
+
+  .muteButton img {
+    width: 20px;
+    height: 20px;
   }
 }
