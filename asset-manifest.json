@@ -1,28 +1,30 @@
 {
   "files": {
-    "main.css": "/Maze/static/css/main.7a693442.chunk.css",
-    "main.js": "/Maze/static/js/main.be2ad6ab.chunk.js",
-    "main.js.map": "/Maze/static/js/main.be2ad6ab.chunk.js.map",
+    "main.css": "/Maze/static/css/main.dca21cff.chunk.css",
+    "main.js": "/Maze/static/js/main.178b359a.chunk.js",
+    "main.js.map": "/Maze/static/js/main.178b359a.chunk.js.map",
     "runtime-main.js": "/Maze/static/js/runtime-main.733a612d.js",
     "runtime-main.js.map": "/Maze/static/js/runtime-main.733a612d.js.map",
-    "static/js/2.746fbe78.chunk.js": "/Maze/static/js/2.746fbe78.chunk.js",
-    "static/js/2.746fbe78.chunk.js.map": "/Maze/static/js/2.746fbe78.chunk.js.map",
+    "static/js/2.d28abf26.chunk.js": "/Maze/static/js/2.d28abf26.chunk.js",
+    "static/js/2.d28abf26.chunk.js.map": "/Maze/static/js/2.d28abf26.chunk.js.map",
     "index.html": "/Maze/index.html",
-    "precache-manifest.8af862b1e3011ae5e5edec8079313b71.js": "/Maze/precache-manifest.8af862b1e3011ae5e5edec8079313b71.js",
+    "precache-manifest.d0857f6ee78feb0b48b0c3405522b623.js": "/Maze/precache-manifest.d0857f6ee78feb0b48b0c3405522b623.js",
     "service-worker.js": "/Maze/service-worker.js",
-    "static/css/main.7a693442.chunk.css.map": "/Maze/static/css/main.7a693442.chunk.css.map",
-    "static/js/2.746fbe78.chunk.js.LICENSE.txt": "/Maze/static/js/2.746fbe78.chunk.js.LICENSE.txt",
+    "static/css/main.dca21cff.chunk.css.map": "/Maze/static/css/main.dca21cff.chunk.css.map",
+    "static/js/2.d28abf26.chunk.js.LICENSE.txt": "/Maze/static/js/2.d28abf26.chunk.js.LICENSE.txt",
     "static/media/ice_cream.svg": "/Maze/static/media/ice_cream.c760f5dc.svg",
     "static/media/index.css": "/Maze/static/media/joystix monospace.18abc722.ttf",
     "static/media/level_end.mp3": "/Maze/static/media/level_end.3931d957.mp3",
     "static/media/logo.svg": "/Maze/static/media/logo.f342226d.svg",
     "static/media/lollipop.svg": "/Maze/static/media/lollipop.5bf858ee.svg",
-    "static/media/maze.mp3": "/Maze/static/media/maze.12c141ff.mp3"
+    "static/media/maze.mp3": "/Maze/static/media/maze.12c141ff.mp3",
+    "static/media/mute.svg": "/Maze/static/media/mute.7f5ee120.svg",
+    "static/media/unmute.svg": "/Maze/static/media/unmute.9339f319.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.733a612d.js",
-    "static/js/2.746fbe78.chunk.js",
-    "static/css/main.7a693442.chunk.css",
-    "static/js/main.be2ad6ab.chunk.js"
+    "static/js/2.d28abf26.chunk.js",
+    "static/css/main.dca21cff.chunk.css",
+    "static/js/main.178b359a.chunk.js"
   ]
 }
